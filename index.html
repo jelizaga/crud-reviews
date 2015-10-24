@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<title>
+			Duck Reviews: The University of Washington
+		</title>
+
+		<!-- Importing stylesheet. -->
+		<link href="css/main.css" rel="stylesheet" />
+
+		<!-- Importing bootstrap.css, jQuery.js, parse.js, font-awesome.css, and raty.js. -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js">
+		</script>
+		<script src="//www.parsecdn.com/js/parse-1.6.0.min.js"></script>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/latest/css/font-awesome.css" rel="stylesheet">
+		<script src="js/raty-fa/demo/javascripts/jquery.js"></script>
+		<script src="js/raty-fa/lib/jquery.raty-fa.js"></script>
+		<script src="js/raty-fa/demo/javascripts/demo.js"></script>
+
+		<!-- Meta info. -->
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="A place for ducks to review things.">
+		<meta name="author" content="Joel Elizaga">
+		<meta name="keywords" content="ducks, seattle, reviews, fried potato slices">
+
+
+
+	</head>
+
+	<body>
+
+		<div id="title">
+			<h1>
+				Duck Reviews
+			</h1>
+			<p id="subtitle">
+				reviews for ducks
+			</p>
+		</div>
+
+		<h2>
+			University of Washington
+		</h2>
+
+		<form id="reviewForm">
+			<div class="form-input">
+				<input type="text" id="reviewerName" />
+				<div id="reviewRating"></div>
+				<input type="text" id="reviewTitle" />
+				<br />
+				<textarea id="reviewTest"></textarea>
+			</div>
+			<button type="submit-review">
+				Submit
+			</button>
+		</form>
+
+
+		<p>
+			What other ducks have to say about University of Washington:
+		</p>
+	    <div id="reviews">
+	    </div>
+
+	</body>
+
+</html>

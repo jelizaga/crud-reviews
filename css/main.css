@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Chewy");
+@import url("https://fonts.googleapis.com/css?family=Fredoka+One");
+
+/* Default body style. */
+body {
+	font-family: "Chewy", sans-serif;
+}
+
+#title h1 {
+	text-align: center;
+}
+
+#subtitle {
+	text-align: center;
+}
