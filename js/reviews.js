@@ -1,13 +1,19 @@
 // Initializing Parse.
+alert("Starting.");
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
+alert("Parse initialized.");
 // Initializing a raty rating plugin.
 $("#reviewRating").raty();
 // Initializing Review.
 var Review = Parse.Object.extend("Review");
 alert("Done.");
+// getData for the reviews.
+getData();
 
 // Triggered on form submission.
 $("reviewForm").submit(function() {
+
+	alert("Submitted.");
 
 	var newReview = new Review();
 
@@ -58,25 +64,7 @@ var insertReviews = function(data) {
 var addReview = function(rev) {
 	// Get parameters (website, band, song) from the data item passed to the function
 	var reviewerName = rev.get("reviewerName");
+	var reviewTitle = rev.get("reviewTitle");
 	var reviewStars = rev.get("reviewStars");
-
-    var band = item.get('band');
-    var website = item.get('website');
-    var song = item.get('song');
-
-	// Append li that includes text from the data item
-    var li = $('<li>' + band + ', ' + song + ', ' + website + '</li>');
-    var button = $("<button class='btn-danger btn-xs'><span class='glyphicon'>Remove</span></button>'");
-    button.click(function() {
-        item.destroy({
-            success:getData
-        });
-    })
-    li.append(button);
-    $('#list').append(li);
-
-	// Time pending, create a button that removes the data item on click
+	var reviewText = rev.get("reviewText");
 }
-
-// Call your getData function when the page loads
-getData();
