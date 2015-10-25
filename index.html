@@ -19,7 +19,7 @@
 		<link href="//netdna.bootstrapcdn.com/font-awesome/latest/css/font-awesome.css" rel="stylesheet" />
 		<script type="text/javascript" src="js/jquery.raty-fa.js"></script>
 
-		<!-- Meta info. -->
+		<!-- Meta info, bootstrap viewport. -->
 		<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="A place for ducks to review things.">
@@ -45,12 +45,11 @@
 
 		<form id="reviewForm">
 			<div class="form-input">
+				<div id="ratyReview"></div>
 				<input type="text" id="reviewerName" />
-				<div id="reviewRating">
-				</div>
 				<input type="text" id="reviewTitle" />
 				<br />
-				<textarea id="reviewTest"></textarea>
+				<textarea id="reviewTest">Write your review here!</textarea>
 			</div>
 			<button type="submit-review">
 				Submit

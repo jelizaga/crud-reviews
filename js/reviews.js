@@ -1,14 +1,16 @@
 // Initializing Parse.
-alert("Starting.");
-Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
-alert("Parse initialized.");
-// Initializing a raty rating plugin.
-$("#reviewRating").raty();
-// Initializing Review.
-var Review = Parse.Object.extend("Review");
-alert("Done.");
-// getData for the reviews.
-getData();
+window.onload = function() {
+	Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
+	alert("Parse initialized. Creating raty.");
+	$("#ratyReview").raty();
+	alert("raty created.");
+	// Initializing a raty rating plugin.
+	// Initializing Review.
+	var Review = Parse.Object.extend("Review");
+	alert("Done.");
+	// getData for the reviews.
+	getData();
+}
 
 // Triggered on form submission.
 $("reviewForm").submit(function() {
