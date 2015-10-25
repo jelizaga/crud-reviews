@@ -30,36 +30,41 @@
 
 	<body>
 
-		<div id="title">
+		<div id="title" class="islanddiv">
 			<h1>
 				Duck Reviews
 			</h1>
-			<p id="subtitle">
-				reviews for ducks
+		</div>
+
+		<div class="islanddiv">
+			<h2>
+				University of Washington
+			</h2>
+		</div>
+
+
+		<div class="islanddiv">
+			<form id="reviewForm">
+				<div class="form-input">
+					<div id="ratyReview"></div>
+					<input type="text" id="reviewerName" />
+					<br />
+					<input type="text" id="reviewTitle" />
+					<br />
+					<textarea id="reviewTest" rows="10" cols="50">Write your review here!</textarea>
+				</div>
+				<button type="submit-review">
+					Submit
+				</button>
+			</form>
+		</div>
+
+		<div class="islanddiv">
+			<p>
+				What other ducks have to say about University of Washington:
 			</p>
 		</div>
 
-		<h2>
-			University of Washington
-		</h2>
-
-		<form id="reviewForm">
-			<div class="form-input">
-				<div id="ratyReview"></div>
-				<input type="text" id="reviewerName" />
-				<input type="text" id="reviewTitle" />
-				<br />
-				<textarea id="reviewTest">Write your review here!</textarea>
-			</div>
-			<button type="submit-review">
-				Submit
-			</button>
-		</form>
-
-
-		<p>
-			What other ducks have to say about University of Washington:
-		</p>
 	    <div id="reviews">
 	    </div>
 

@@ -1,15 +1,45 @@
-@import url("https://fonts.googleapis.com/css?family=Chewy");
-@import url("https://fonts.googleapis.com/css?family=Fredoka+One");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:700");
 
 /* Default body style. */
 body {
-	font-family: "Chewy", sans-serif;
+	/* Source: Martuchox at http://subtlepatterns.com. */
+	background-image: url("../pics/bgtile.png");
+	font-family: monospace;
+	font-weight: 400;
+}
+
+h2 {
+	margin: 0;
+}
+
+.islanddiv {
+	background-color: #111B24;
+	box-shadow: 1px 1px 5px #3A3A3A;
+	color: #C6774C;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 20px;
+	width: 900px;
+}
+
+/* Styling the title. */
+#title {
+	/* Source: Unknown. Acquired from wallhaven.cc. */
+	background-image: url("../pics/titlebg.png");
+	margin-left: auto;
+	margin-right: auto;
+	height: 643px;
+	width: 900px;
 }
 
 #title h1 {
+	color: #cba1a3;
+	font-family: "Ubuntu Mono";
+	font-size: 4em;
+	font-weight: 700;
+	padding: 4em;
 	text-align: center;
-}
-
-#subtitle {
-	text-align: center;
+	text-shadow: 1px 1px 5px #3A3A3A;
 }
