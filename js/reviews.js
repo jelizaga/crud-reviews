@@ -10,6 +10,12 @@ window.onload = function() {
 // Triggered on form submission.
 $("#submit").click(function() {
 
+	var TestObject = Parse.Object.extend("TestObject");
+	var testObject = new TestObject();
+	testObject.save({foo: "bar"}).then(function(object) {
+	  alert("yay! it worked");
+	});
+
 	alert("Submitted.");
 
 	var newReview = new Review();
