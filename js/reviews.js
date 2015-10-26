@@ -4,7 +4,7 @@
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 //$("#ratyReview").raty();
 var Review = Parse.Object.extend("Review");
-getData();
+//getData();
 
 
 /*
