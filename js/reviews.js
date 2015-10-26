@@ -14,6 +14,12 @@ newReview.save({
 // Triggered on form submission.
 $("#submitReview").on("click", function() {
 
+	var reviewerName = $("#reviewerName").val();
+	var reviewTitle = $("#reviewTitle").val();
+	var reviewStars = $("#ratyReview").raty("score");
+	var reviewText = $("#reviewText").val();
+	alert(reviewerName + " " + reviewTitle + " " + reviewStars + " " + reviewText);
+
 	alert("Clicked.");
 	var newReview = new Review();
 		newReview.save({
