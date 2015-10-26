@@ -15,7 +15,8 @@ newReview.save({
 
 // Triggered on form submission.
 $("#submitReview").on("click", function() {
-
+	
+	// Getting form elements.
 	var reviewerName = $("#reviewerName").val();
 	var reviewTitle = $("#reviewTitle").val();
 	var reviewStars = $("#ratyReview").raty("score");
@@ -24,10 +25,10 @@ $("#submitReview").on("click", function() {
 
 	var newReview = new Review();
 	newReview.save({
-		reviewerName: "REVIEWNAME",
-		reviewTitle: "REVIEWTITLE",
-		reviewStars: "REVIEWSTARS",
-		reviewText: "REVIEWTEXT"
+		reviewerName: reviewerName,
+		reviewTitle: reviewTitle,
+		reviewStars: reviewStars,
+		reviewText: reviewText
 	});
 
 	/*
