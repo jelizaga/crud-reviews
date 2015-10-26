@@ -3,12 +3,6 @@ Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKM
 $("#ratyReview").raty();
 var Review = Parse.Object.extend("Review");
 var newReview = new Review();
-newReview.save({
-	reviewerName: "TEST NAME",
-	reviewTitle: "TEST TITLE",
-	reviewStars: "TEST SCORE",
-	reviewText: "TEST TEXT"
-});
 // getData();
 
 // Triggered on form submission.
@@ -21,11 +15,11 @@ $("#submitReview").on("click", function() {
 	alert("This should be sent to Parse: " + reviewerName + " " + reviewTitle + " " + reviewStars + " " + reviewText);
 
 	var newReview = new Review();
-		newReview.save({
-		reviewerName: reviewerName,
-		reviewTitle: reviewTitle,
-		reviewStars: reviewStars,
-		reviewText: reviewText
+	newReview.save({
+		reviewerName: "A",
+		reviewTitle: "B",
+		reviewStars: "C",
+		reviewText: "D"
 	});
 
 	/*
