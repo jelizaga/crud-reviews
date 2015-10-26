@@ -18,15 +18,14 @@ $("#submitReview").on("click", function() {
 	var reviewTitle = $("#reviewTitle").val();
 	var reviewStars = $("#ratyReview").raty("score");
 	var reviewText = $("#reviewText").val();
-	alert(reviewerName + " " + reviewTitle + " " + reviewStars + " " + reviewText);
+	alert("This should be sent to Parse: " + reviewerName + " " + reviewTitle + " " + reviewStars + " " + reviewText);
 
-	alert("Clicked.");
 	var newReview = new Review();
 		newReview.save({
-		reviewerName: "BUTTON CLICKED",
-		reviewTitle: "BUTTON CLICKED",
-		reviewStars: "BUTTON CLICKED",
-		reviewText: "BUTTON CLICKED"
+		reviewerName: reviewerName,
+		reviewTitle: reviewTitle,
+		reviewStars: reviewStars,
+		reviewText: reviewText
 	});
 
 	/*
