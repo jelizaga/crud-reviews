@@ -1,5 +1,4 @@
 // Initializing Parse and the review raty.
-/*
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 $("#ratyReview").raty();
 // var Review = Parse.Object.extend("Review");
@@ -9,11 +8,19 @@ var testObject = new TestObject();
 testObject.save({foo: "bar"}).then(function(object) {
 	alert("yay! it worked 1");
 });
-//getData();
-*/
+
+var Review = Parse.Object.extend("Review");
+var newReview = new Review();
+newReview.save({
+	reviewerName: "TEST NAME",
+	reviewTitle: "TEST TITLE",
+	reviewStars: "TEST SCORE",
+	reviewText: "TEST TEXT"
+});
 
 
 
+/*
 window.onload = function() {
 	Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 	$("#ratyReview").raty();
@@ -24,9 +31,18 @@ window.onload = function() {
 	testObject.save({foo: "TEST"}).then(function(object) {
 	  alert("yay! it worked");
 	});
+	var Review = Parse.Object.extend("Review");
+	var newReview = new Review();
+	newReview.save({
+		reviewerName: "TEST NAME",
+		reviewTitle: "TEST TITLE",
+		reviewStars: "TEST SCORE",
+		reviewText: "TEST TEXT"
+	});
 
 	// getData();
 }
+*/
 
 
 
@@ -34,21 +50,14 @@ window.onload = function() {
 $("#submitReview").on("click", function() {
 
 	alert("Clicked.");
+
+	/*
 	var reviewerName = $("#reviewerName").val();
 	var reviewTitle = $("#reviewTitle").val();
 	var reviewStars = $("#ratyReview").raty("score");
 	var reviewText = $("#reviewText").val();
 	alert(reviewerName + " " + " " reviewTitle + " " + reviewStars + " " + reviewText);
 
-	/*
-	var TestObject = Parse.Object.extend("TestObject");
-	var testObject = new TestObject();
-	testObject.save({foo: "bar"}).then(function(object) {
-	  alert("yay! it worked 2");
-	});
-
-/*
-	var newReview = new Review();
 	var stars = $("#ratyReview").raty("score");
 
 	alert("Stars: " + stars);
