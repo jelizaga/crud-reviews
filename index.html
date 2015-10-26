@@ -40,6 +40,11 @@
 			<h2>
 				University of Washington
 			</h2>
+			<img src="pics/uw.jpg" id="unipic" />
+			<p>
+				The University of Washington is a university located in the state of Washington.
+				The humans congregate here to drink brown water and discuss things.
+			</p>
 		</div>
 
 
@@ -50,11 +55,13 @@
 			<form id="reviewForm">
 				<div class="form-input">
 					<div id="ratyReview"></div>
-					<input type="text" id="reviewerName" />
+					<input type="text" id="reviewTitle" value="Your review title." 
+						onFocus="this.value=''" />
 					<br />
-					<input type="text" id="reviewTitle" />
+					<input type="text" id="reviewerName" value="Enter your name here."
+						onFocus="this.value=''" />
 					<br />
-					<textarea id="reviewTest" rows="10" cols="50">Write your review here!</textarea>
+					<textarea id="reviewTest" rows="10" cols="50"></textarea>
 				</div>
 				<button type="submit-review">
 					Submit

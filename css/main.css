@@ -1,12 +1,12 @@
 /* Importing Google fonts. */
-@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:700");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:700,400");
 @import url("https://fonts.googleapis.com/css?family=Inconsolata");
 
 /* Default body style. */
 body {
 	/* Source: Martuchox at http://subtlepatterns.com. */
 	background-image: url("../pics/bgtile.png");
-	font-family: "Inconsolata", monospace;
+	font-family: monospace;
 }
 
 p, h2, #ratyReview, #reviewIntro {
@@ -24,7 +24,7 @@ form {
 
 .islandDiv {
 	background-color: #111B24;
-	box-shadow: 1px 1px 5px;
+	box-shadow: 1px 1px 5px #000000;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 10px;
@@ -53,8 +53,9 @@ form {
 	text-shadow: 1px 1px 5px #3A3A3A;
 }
 
-/* Styling the review form. */
-#reviewform input[type=text] {
+/* Location info. */
+#unipic {
+	float: right;
 	margin: 10px;
 }
 
