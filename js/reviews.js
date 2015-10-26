@@ -23,6 +23,7 @@ window.onload = function() {
 // Triggered on form submission.
 $("#submitReview").on("click", function() {
 
+	alert("Clicked.");
 	var TestObject = Parse.Object.extend("TestObject");
 	var testObject = new TestObject();
 	testObject.save({foo: "bar"}).then(function(object) {
@@ -48,7 +49,7 @@ $("#submitReview").on("click", function() {
 	newReview.save();
 	getData();
 	*/
-})
+});
 
 // Queries parse for review data.
 var getData = function() {
