@@ -4,6 +4,12 @@
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 $("#ratyReview").raty();
 var Review = Parse.Object.extend("Review");
+
+var TestObject = Parse.Object.extend("TestObject");
+var testObject = new TestObject();
+testObject.save({foo: "bar"}).then(function(object) {
+	alert("yay! it worked 1");
+});
 //getData();
 
 
@@ -24,10 +30,11 @@ window.onload = function() {
 $("#submitReview").on("click", function() {
 
 	alert("Clicked.");
+
 	var TestObject = Parse.Object.extend("TestObject");
 	var testObject = new TestObject();
 	testObject.save({foo: "bar"}).then(function(object) {
-	  alert("yay! it worked");
+	  alert("yay! it worked 2");
 	});
 
 /*
