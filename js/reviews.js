@@ -33,16 +33,6 @@ $("#submitReview").on("click", function() {
 
 
 
-	var userReview = new Review();
-	userReview.save({
-		reviewerName: reviewerName,
-		reviewTitle: reviewTitle,
-		reviewStars: reviewStars,
-		reviewText: reviewText
-	});
-
-
-
 	/*
 	var reviewerName = $("#reviewerName").val();
 	var reviewTitle = $("#reviewTitle").val();
