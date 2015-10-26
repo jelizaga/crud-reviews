@@ -9,12 +9,8 @@ window.onload = function() {
 	getData();
 }
 */
-
-
-$(function() {
-	$("#submitReview").submit(function() {
-		testAlert();
-	});
+$("#submitReview").submit(function() {
+	testAlert();
 });
 
 var testAlert = function() {
