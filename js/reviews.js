@@ -4,10 +4,16 @@ window.onload = function() {
 	$("#ratyReview").raty();
 	var Review = Parse.Object.extend("Review");
 	// getData for the reviews.
+
 	getData();
 }
 
+$("#submitReview").click(function() {
+	alert("TEST");
+})
+
 // Triggered on form submission.
+/*
 $("#submitReview").click(function() {
 
 	var TestObject = Parse.Object.extend("TestObject");
@@ -36,6 +42,7 @@ $("#submitReview").click(function() {
 	newReview.save();
 	getData();
 })
+*/
 
 
 
