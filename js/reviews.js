@@ -23,16 +23,13 @@ window.onload = function() {
 // Triggered on form submission.
 $("#submitReview").on("click", function() {
 
-	alert("CLICKED");
-	/*
 	var TestObject = Parse.Object.extend("TestObject");
 	var testObject = new TestObject();
 	testObject.save({foo: "bar"}).then(function(object) {
 	  alert("yay! it worked");
 	});
 
-	alert("Submitted.");
-
+/*
 	var newReview = new Review();
 	var stars = $("#ratyReview").raty("score");
 
