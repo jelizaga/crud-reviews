@@ -10,8 +10,6 @@ window.onload = function() {
 }
 */
 
-alert("TEST.");
-
 // Triggered on form submission.
 $("#pressThis").on("click", function() {
 
