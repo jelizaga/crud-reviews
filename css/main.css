@@ -7,7 +7,8 @@ body {
 	/* Source: Martuchox at http://subtlepatterns.com. */
 	background-image: url("../pics/bgtile.png");
 	color: #C6774C;
-	font-family: monospace;
+	font-family: "Ubuntu Mono", monospace;
+	font-weight: 400;
 }
 
 p, h2, #ratyReview, #reviewIntro {
@@ -49,7 +50,7 @@ form {
 }
 
 #title h1 {
-	color: #cba1a3;
+	color: #CBA1A3;
 	font-family: "Ubuntu Mono";
 	font-size: 4em;
 	font-weight: 700;
@@ -63,8 +64,8 @@ form {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 #caption {

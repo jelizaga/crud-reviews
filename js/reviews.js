@@ -8,7 +8,7 @@ window.onload = function() {
 }
 
 // Triggered on form submission.
-$("reviewForm").submit(function() {
+$("#submit").click(function() {
 
 	alert("Submitted.");
 
@@ -19,8 +19,8 @@ $("reviewForm").submit(function() {
 
 	// Setting the newReview's content.
 	newReview.set("reviewerName", $("#reviewerName").val());
-	newReview.set("reviewTitle", $("reviewTitle").val());
-	newReview.set("reviewStars", $("#ratyReview").val());
+	newReview.set("reviewTitle", $("#reviewTitle").val());
+	newReview.set("reviewStars", stars;
 	newReview.set("reviewText", $("#reviewText").val());
 	// Setting the newReview's vote counts to zero.
 	newReview.set("upvotes", 0);
@@ -37,7 +37,7 @@ $("reviewForm").submit(function() {
 
 // Queries parse for review data.
 var getData = function() {
-	alert("Getting data.");
+	alert("getData");
     var query = new Parse.Query(Review);
 	// Set a parameter for your query -- where the website property isn't missing
     query.notEqualTo("reviewerText", "");
@@ -54,13 +54,15 @@ var getData = function() {
 // Empties out the reviews <div>, loops through my parse data and sends each piece of data
 // to addReview.
 var insertReviews = function(data) {
-	$('#reviews').empty();
+	alert("insertReviews");
+	$("#reviews").empty();
     for (i in data) {
         addReview(data[i]);
     }
 }
 
 var addReview = function(rev) {
+	alert("addReview");
 	// Acquiring the review's parameters.
 	var reviewerName = rev.get("reviewerName");
 	var reviewTitle = rev.get("reviewTitle");
