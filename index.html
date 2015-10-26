@@ -10,7 +10,6 @@
 
 		<!-- Importing stylesheet and js for loading and acquiring reviews.. -->
 		<link href="css/main.css" rel="stylesheet" />
-		<script type="text/javascript" src="js/reviews.js"></script>
 
 		<!-- Importing bootstrap.css, jQuery.js, parse.js, font-awesome.css, and raty.js. -->
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -45,6 +44,10 @@
 				The University of Washington is a university located in the state of Washington.
 				The humans congregate here to drink brown water and discuss things.
 			</em>
+
+			<button id="pressThis">
+				PRESS THIS
+			</button>
 		</div>
 
 
@@ -55,15 +58,13 @@
 			<form id="reviewForm">
 				<div class="form-input">
 					<div id="ratyReview"></div>
-					<input type="text" id="reviewTitle" value="Your review title." 
-						onFocus="this.value=''" />
+					<input type="text" id="reviewTitle" placeholder="Your review's title." />
 					<br />
-					<input type="text" id="reviewerName" value="Enter your name here."
-						onFocus="this.value=''" />
+					<input type="text" id="reviewerName" placeholder="Enter your name here." />
 					<br />
 					<textarea id="reviewTest" rows="10" cols="50"></textarea>
 				</div>
-				<button id="submitReview">
+				<button id="submitReview" class="btn btn-default">
 					Submit
 				</button>
 			</form>
@@ -72,11 +73,14 @@
 		<div class="islandDiv">
 			<text id="reviewIntro">
 				What other ducks have to say about University of Washington:
-			</test>
+			</text>
 		</div>
 
 	    <div id="reviews">
 	    </div>
+
+
+		<script type="text/javascript" src="js/reviews.js"></script>
 
 	</body>
 

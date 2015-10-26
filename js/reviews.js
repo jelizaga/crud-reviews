@@ -9,18 +9,14 @@ window.onload = function() {
 	getData();
 }
 */
-$("#submitReview").submit(function() {
-	testAlert();
-});
 
-var testAlert = function() {
-	alert("TEST");
-}
+alert("TEST.");
 
 // Triggered on form submission.
-/*
-$("#submitReview").click(function() {
+$("#pressThis").on("click", function() {
 
+	alert("CLICKED");
+	/*
 	var TestObject = Parse.Object.extend("TestObject");
 	var testObject = new TestObject();
 	testObject.save({foo: "bar"}).then(function(object) {
@@ -46,10 +42,8 @@ $("#submitReview").click(function() {
 	// Saves newReview to parse, getData.
 	newReview.save();
 	getData();
+	*/
 })
-*/
-
-
 
 // Queries parse for review data.
 var getData = function() {
