@@ -1,7 +1,7 @@
 // Initializing Parse and the review raty.
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 $("#ratyReview").raty();
-var Review = Parse.Object.extend("Review");
+// var Review = Parse.Object.extend("Review");
 
 var TestObject = Parse.Object.extend("TestObject");
 var testObject = new TestObject();

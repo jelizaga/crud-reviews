@@ -11,12 +11,7 @@ body {
 	font-weight: 400;
 }
 
-p, h2, #ratyReview, #reviewIntro {
-	color: #C6774C;
-	margin: 0;
-}
-
-em {
+p, h2, em, #ratyReview, #reviewIntro {
 	color: #C6774C;
 }
 
@@ -39,9 +34,13 @@ form {
 	width: 900px;
 }
 
+.italic {
+	font-style: italic;
+}
+
 /* Styling the title. */
 #title {
-	/* Source: Unknown. Acquired from wallhaven.cc. */
+	/* Source: Aaron Burden. https://unsplash.com/aaronburden. */
 	background-image: url("../pics/titlebg.png");
 	margin-left: auto;
 	margin-right: auto;
@@ -72,7 +71,3 @@ form {
 	text-align: center;
 }
 
-/* Introduction to reviews. */
-#reviewIntro {
-	font-style: italic;
-}
