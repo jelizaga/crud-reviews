@@ -1,15 +1,14 @@
 // Initializing Parse and the review raty.
 window.onload = function() {
 	Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
+	var TestObject = Parse.Object.extend("TestObject");
+	var testObject = new TestObject();
+	testObject.save({foo: "bar"}).then(function(object) {
+	  alert("yay! it worked");
+	});
 	$("#ratyReview").raty();
 	var Review = Parse.Object.extend("Review");
 	var testRev = new Review();
-	testRev.set("reviewerName", "TEST");
-	testRev.set("reviewTitle", "TEST");
-	testRev.set("reviewStars", "TEST");
-	testRev.set("reviewText", "TEST");
-	testRev.set("upvotes", 0);
-	testRev.set("downvotes", 0);
 	// getData for the reviews.
 	getData();
 }
