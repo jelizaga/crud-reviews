@@ -6,12 +6,17 @@
 body {
 	/* Source: Martuchox at http://subtlepatterns.com. */
 	background-image: url("../pics/bgtile.png");
+	color: #C6774C;
 	font-family: monospace;
 }
 
 p, h2, #ratyReview, #reviewIntro {
 	color: #C6774C;
 	margin: 0;
+}
+
+em {
+	color: #C6774C;
 }
 
 form {
@@ -55,8 +60,15 @@ form {
 
 /* Location info. */
 #unipic {
-	float: right;
-	margin: 10px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#caption {
+	text-align: center;
 }
 
 /* Introduction to reviews. */
