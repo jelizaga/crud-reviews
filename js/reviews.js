@@ -3,6 +3,13 @@ window.onload = function() {
 	Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 	$("#ratyReview").raty();
 	var Review = Parse.Object.extend("Review");
+	var testRev = new Review();
+	testRev.set("reviewerName", "TEST");
+	testRev.set("reviewTitle", "TEST");
+	testRev.set("reviewStars", "TEST");
+	testRev.set("reviewText", "TEST");
+	testRev.set("upvotes", 0);
+	testRev.set("downvotes", 0);
 	// getData for the reviews.
 	getData();
 }
@@ -20,7 +27,7 @@ $("#submit").click(function() {
 	// Setting the newReview's content.
 	newReview.set("reviewerName", $("#reviewerName").val());
 	newReview.set("reviewTitle", $("#reviewTitle").val());
-	newReview.set("reviewStars", stars;
+	newReview.set("reviewStars", stars);
 	newReview.set("reviewText", $("#reviewText").val());
 	// Setting the newReview's vote counts to zero.
 	newReview.set("upvotes", 0);
