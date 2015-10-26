@@ -1,14 +1,8 @@
 // Initializing Parse and the review raty.
 window.onload = function() {
 	Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
-	var TestObject = Parse.Object.extend("TestObject");
-	var testObject = new TestObject();
-	testObject.save({foo: "bar"}).then(function(object) {
-	  alert("yay! it worked");
-	});
 	$("#ratyReview").raty();
 	var Review = Parse.Object.extend("Review");
-	var testRev = new Review();
 	// getData for the reviews.
 	getData();
 }
@@ -32,11 +26,9 @@ $("#submit").click(function() {
 	newReview.set("upvotes", 0);
 	newReview.set("downvotes", 0);
 
-	// After setting each property, save your new instance back to your database
-	newReview.save(null, {
-        success: getData
-    });
-	return false
+	// Saves newReview to parse, getData.
+	newReview.save();
+	getData();
 });
 
 
