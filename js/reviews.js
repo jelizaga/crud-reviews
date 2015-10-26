@@ -37,7 +37,7 @@ $("reviewForm").submit(function() {
 
 // Queries parse for review data.
 var getData = function() {
-	
+	alert("Getting data.");
     var query = new Parse.Query(Review);
 	// Set a parameter for your query -- where the website property isn't missing
     query.notEqualTo("reviewerText", "");
