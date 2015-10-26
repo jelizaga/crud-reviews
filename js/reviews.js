@@ -1,14 +1,6 @@
 // Initializing Parse and the review raty.
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 $("#ratyReview").raty();
-// var Review = Parse.Object.extend("Review");
-
-var TestObject = Parse.Object.extend("TestObject");
-var testObject = new TestObject();
-testObject.save({foo: "bar"}).then(function(object) {
-	alert("yay! it worked 1");
-});
-
 var Review = Parse.Object.extend("Review");
 var newReview = new Review();
 newReview.save({
@@ -17,39 +9,19 @@ newReview.save({
 	reviewStars: "TEST SCORE",
 	reviewText: "TEST TEXT"
 });
-
-
-
-/*
-window.onload = function() {
-	Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
-	$("#ratyReview").raty();
-	// var Review = Parse.Object.extend("Review");
-	// getData for the reviews.
-	var TestObject = Parse.Object.extend("TestObject");
-	var testObject = new TestObject();
-	testObject.save({foo: "TEST"}).then(function(object) {
-	  alert("yay! it worked");
-	});
-	var Review = Parse.Object.extend("Review");
-	var newReview = new Review();
-	newReview.save({
-		reviewerName: "TEST NAME",
-		reviewTitle: "TEST TITLE",
-		reviewStars: "TEST SCORE",
-		reviewText: "TEST TEXT"
-	});
-
-	// getData();
-}
-*/
-
-
+// getData();
 
 // Triggered on form submission.
 $("#submitReview").on("click", function() {
 
 	alert("Clicked.");
+	var newReview = new Review();
+		newReview.save({
+		reviewerName: "BUTTON CLICKED",
+		reviewTitle: "BUTTON CLICKED",
+		reviewStars: "BUTTON CLICKED",
+		reviewText: "BUTTON CLICKED"
+	});
 
 	/*
 	var reviewerName = $("#reviewerName").val();
