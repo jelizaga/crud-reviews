@@ -7,7 +7,6 @@ body {
 	/* Source: Martuchox at http://subtlepatterns.com. */
 	background-image: url("../pics/bgtile.png");
 	color: #C6774C;
-	font-family: "Ubuntu Mono", monospace;
 	font-weight: 400;
 }
 
@@ -35,6 +34,7 @@ form {
 }
 
 .italic {
+	color: #C6774C;
 	font-style: italic;
 }
 

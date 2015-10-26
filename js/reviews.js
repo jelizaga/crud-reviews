@@ -1,4 +1,5 @@
 // Initializing Parse and the review raty.
+/*
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 $("#ratyReview").raty();
 // var Review = Parse.Object.extend("Review");
@@ -9,18 +10,23 @@ testObject.save({foo: "bar"}).then(function(object) {
 	alert("yay! it worked 1");
 });
 //getData();
+*/
 
 
-/*
+
 window.onload = function() {
 	Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 	$("#ratyReview").raty();
-	var Review = Parse.Object.extend("Review");
+	// var Review = Parse.Object.extend("Review");
 	// getData for the reviews.
+	var TestObject = Parse.Object.extend("TestObject");
+	var testObject = new TestObject();
+	testObject.save({foo: "TEST"}).then(function(object) {
+	  alert("yay! it worked");
+	});
 
-	getData();
+	// getData();
 }
-*/
 
 
 
