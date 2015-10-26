@@ -3,6 +3,12 @@ Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKM
 $("#ratyReview").raty();
 var Review = Parse.Object.extend("Review");
 var newReview = new Review();
+newReview.save({
+	reviewerName: "W",
+	reviewTitle: "X",
+	reviewStars: "Y",
+	reviewText: "Zs"
+});
 // getData();
 
 // Triggered on form submission.
