@@ -1,4 +1,5 @@
 // Initializing Parse and the review raty.
+/*
 window.onload = function() {
 	Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 	$("#ratyReview").raty();
@@ -7,10 +8,18 @@ window.onload = function() {
 
 	getData();
 }
+*/
 
-$("#submitReview").click(function() {
+
+$(function() {
+	$("#submitReview").submit(function() {
+		testAlert();
+	});
+});
+
+var testAlert = function() {
 	alert("TEST");
-})
+}
 
 // Triggered on form submission.
 /*
