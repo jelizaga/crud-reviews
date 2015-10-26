@@ -8,7 +8,7 @@ window.onload = function() {
 }
 
 // Triggered on form submission.
-$("#submit").click(function() {
+$("#submitReview").click(function() {
 
 	var TestObject = Parse.Object.extend("TestObject");
 	var testObject = new TestObject();
@@ -35,7 +35,7 @@ $("#submit").click(function() {
 	// Saves newReview to parse, getData.
 	newReview.save();
 	getData();
-});
+})
 
 
 
