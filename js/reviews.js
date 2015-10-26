@@ -1,12 +1,13 @@
 // Initializing Parse and the review raty.
-
-
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 $("#ratyReview").raty();
 var Review = Parse.Object.extend("Review");
 
 var TestObject = Parse.Object.extend("TestObject");
-
+var testObject = new TestObject();
+testObject.save({foo: "bar"}).then(function(object) {
+	alert("yay! it worked 1");
+});
 //getData();
 
 
@@ -27,7 +28,13 @@ window.onload = function() {
 $("#submitReview").on("click", function() {
 
 	alert("Clicked.");
+	var reviewerName = $("#reviewerName").val();
+	var reviewTitle = $("#reviewTitle").val();
+	var reviewStars = $("#ratyReview").raty("score");
+	var reviewText = $("#reviewText").val();
+	alert(reviewerName + " " + " " reviewTitle + " " + reviewStars + " " + reviewText);
 
+	/*
 	var TestObject = Parse.Object.extend("TestObject");
 	var testObject = new TestObject();
 	testObject.save({foo: "bar"}).then(function(object) {
@@ -75,19 +82,22 @@ var getData = function() {
 // to addReview.
 var insertReviews = function(data) {
 	alert("insertReviews");
-	$("#reviews").empty();
+	// $("#reviews").empty();
     for (i in data) {
         addReview(data[i]);
     }
 }
 
 var addReview = function(rev) {
-	alert("addReview");
 	// Acquiring the review's parameters.
 	var reviewerName = rev.get("reviewerName");
 	var reviewTitle = rev.get("reviewTitle");
 	var reviewStars = rev.get("reviewStars");
 	var reviewText = rev.get("reviewText");
 
-	alert(reviewerName + " " + reviewTitle + " " + reviewStars + " " + reviewText);
+	// Constructing review.
+	var oneReview = ("<div class='islandDiv'><p>" + reviewTitle + " by " + reviewName + "</p><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
+
+	// Inserting review.
+	$("#reviewIntro").after(oneReview);
 }
