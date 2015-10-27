@@ -14,7 +14,13 @@ $("#submitReview").on("click", function() {
 	var reviewText = $("#reviewText").val();
 
 	var aReview = new Review();
+	/*
 	aReview.set("reviewerName", "TEST NAME");
+	aReview.set("reviewTitle", "TEST TITLE");
+	aReview.set("reviewStars", "TEST STARS");
+	aReview.set("reviewText", "TEST TEXT");
+	*/
+	aReview.set("reviewerName", reviewerName);
 	aReview.set("reviewTitle", "TEST TITLE");
 	aReview.set("reviewStars", "TEST STARS");
 	aReview.set("reviewText", "TEST TEXT");
