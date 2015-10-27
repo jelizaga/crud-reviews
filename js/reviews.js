@@ -21,6 +21,7 @@ $("#submitReview").on("click", function() {
 	aReview.set("reviewText", "TEST TEXT");
 	aReview.set("upvotes", 0);
 	aReview.set("downvotes", 0);
+	aReview.save();
 
 	/*
 	var aReview = new Review();
