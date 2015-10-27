@@ -12,67 +12,28 @@ $("#submitReview").on("click", function() {
 	var reviewTitle = $("#reviewTitle").val();
 	var reviewStars = $("#ratyReview").raty("score");
 	var reviewText = $("#reviewText").val();
-
-	var aReview = new Review();
-	/*
-	aReview.set("reviewerName", "TEST NAME");
-	aReview.set("reviewTitle", "TEST TITLE");
-	aReview.set("reviewStars", "TEST STARS");
-	aReview.set("reviewText", "TEST TEXT");
-	*/
-	aReview.set("reviewerName", reviewerName);
-	aReview.set("reviewTitle", reviewTitle);
-	aReview.set("reviewStars", "TEST STARS");
-	aReview.set("reviewText", reviewText);
-	aReview.set("upvotes", 0);
-	aReview.set("downvotes", 0);
-	aReview.save(null, {
-		success: function(aReview) {
-	    	alert("New object created with objectId: " + aReview.id);
-	  	},
-  		error: function(aReview, error) {
-    		alert('Failed to create new object, with error code: ' + error.message);
-  		}
-	});
-
-	/*
-	var aReview = new Review();
-	aReview.save({
-		reviewerName: "A",
-		reviewTitle: "B",
-		reviewStars: "C",
-		reviewText: "D",
-		upvotes: 0,
-		downvotes: 0
-	});
-*/
-
-
-
-	/*
-	var reviewerName = $("#reviewerName").val();
-	var reviewTitle = $("#reviewTitle").val();
-	var reviewStars = $("#ratyReview").raty("score");
-	var reviewText = $("#reviewText").val();
-	alert(reviewerName + " " + " " reviewTitle + " " + reviewStars + " " + reviewText);
-
-	var stars = $("#ratyReview").raty("score");
-
-	alert("Stars: " + stars);
-
-	// Setting the newReview's content.
-	newReview.set("reviewerName", $("#reviewerName").val());
-	newReview.set("reviewTitle", $("#reviewTitle").val());
-	newReview.set("reviewStars", stars);
-	newReview.set("reviewText", $("#reviewText").val());
-	// Setting the newReview's vote counts to zero.
-	newReview.set("upvotes", 0);
-	newReview.set("downvotes", 0);
-
-	// Saves newReview to parse, getData.
-	newReview.save();
-	getData();
-	*/
+	
+	// Authenticate that there's stuff in the form.
+	if (reviewName == "" || reviewTitle == "" || reviewStars == 0 || reviewText == "") {
+		alert("You forgot something. Please fill out the form completely.");
+	} else {
+		// If stuff's in the form, get the stuff, send to Parse.
+		var aReview = new Review();
+		aReview.set("reviewerName", reviewerName);
+		aReview.set("reviewTitle", reviewTitle);
+		aReview.set("reviewStars", "TEST STARS");
+		aReview.set("reviewText", reviewText);
+		aReview.set("upvotes", 0);
+		aReview.set("downvotes", 0);
+		aReview.save(null, {
+			success: function(aReview) {
+		    	alert("New object created with objectId: " + aReview.id);
+		  	},
+	  		error: function(aReview, error) {
+	    		alert('Failed to create new object, with error code: ' + error.message);
+	  		}
+		});
+	}
 });
 
 // Queries parse for review data.
@@ -80,6 +41,9 @@ var getData = function() {
 	alert("getData");
     var query = new Parse.Query(Review);
 	// Set a parameter for your query -- where the website property isn't missing
+	query.notEqualTo("reviewerName", "");
+	query.notEqualTo("reviewTitle", "");
+	query.notEqualTo("reviewStars", 0);
     query.notEqualTo("reviewerText", "");
 	// Executes the query above (var query); if it's successful the returned results are sent
 	// to insertReviews to be inserted onto the page.
