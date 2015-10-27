@@ -33,6 +33,16 @@ $("#submitReview").on("click", function() {
 		downvotes: 0
 	});
 
+	var anotherReview = new Review();
+	anotherReview.save({
+		reviewerName: "Y",
+		reviewTitle: "Y",
+		reviewStars: "Y",
+		reviewText: "Y",
+		upvotes: 0,
+		downvotes: 0
+	});
+
 
 
 	/*
