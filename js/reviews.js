@@ -31,16 +31,6 @@ $("#submitReview").on("click", function() {
 		reviewText: "?"
 	});
 
-	var newReview = new Review();
-	newReview.save({
-		reviewerName: reviewerName,
-		reviewTitle: reviewTitle,
-		reviewStars: reviewStars,
-		reviewText: reviewText
-		upvotes: 0,
-		downvotes: 0
-	});
-
 
 
 	/*
