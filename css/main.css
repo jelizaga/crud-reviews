@@ -5,6 +5,7 @@
 /* Default body style. */
 body {
 	/* Source: Martuchox at http://subtlepatterns.com. */
+	background-color: #000000;
 	background-image: url("../pics/bgtile.png");
 	color: #C6774C;
 	font-weight: 400;
