@@ -21,7 +21,14 @@ $("#submitReview").on("click", function() {
 	aReview.set("reviewText", "TEST TEXT");
 	aReview.set("upvotes", 0);
 	aReview.set("downvotes", 0);
-	aReview.save();
+	aReview.save(null, {
+		success: function(aReview) {
+	    	alert("New object created with objectId: " + aReview.id);
+	  	},
+  		error: function(aReview, error) {
+    		alert('Failed to create new object, with error code: ' + error.message);
+  		}
+	});
 
 	/*
 	var aReview = new Review();
