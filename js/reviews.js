@@ -2,6 +2,7 @@
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 $("#ratyReview").raty();
 var Review = Parse.Object.extend("Review");
+getData();
 
 // Triggered on form submission.
 $("#submitReview").on("click", function() {
@@ -32,6 +33,7 @@ $("#submitReview").on("click", function() {
 		aReview.save(null, {
 			success: function(aReview) {
 		    	alert("Thank you for your review!");
+		    	getData();
 		  	},
 	  		error: function(aReview, error) {
 	    		alert("ERROR: " + error.message);
