@@ -31,6 +31,14 @@ $("#submitReview").on("click", function() {
 		reviewText: "?"
 	});
 
+	var newReview = new Review();
+	newReview.save({
+		reviewerName: $("#reviewerName").val(),
+		reviewTitle: $("#reviewTitle").val(),
+		reviewStars: $("#ratyReview").raty("score"),
+		reviewText: $("#reviewText").val()
+	});
+
 
 
 	/*
