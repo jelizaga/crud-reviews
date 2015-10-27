@@ -23,12 +23,12 @@ $("#submitReview").on("click", function() {
 	var reviewText = $("#reviewText").val();
 	alert("This should be sent to Parse: " + reviewerName + " " + reviewTitle + " " + reviewStars + " " + reviewText);
 
-	var testReview = new Review();
-	testReview.save({
-		reviewerName: "?",
-		reviewTitle: "?",
-		reviewStars: "?",
-		reviewText: "?"
+	var newReview = new Review();
+	newReview.save({
+		"reviewerName": "?",
+		"reviewTitle": "?",
+		"reviewStars": "?",
+		"reviewText": "?",
 	});
 
 
