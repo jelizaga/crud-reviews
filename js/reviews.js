@@ -14,7 +14,7 @@ $("#submitReview").on("click", function() {
 	var reviewText = $("#reviewText").val();
 	
 	// Authenticate that there's stuff in the form.
-	if (reviewName == "" || reviewTitle == "" || reviewStars == 0 || reviewText == "") {
+	if (reviewerName == "" || reviewTitle == "" || reviewStars == 0 || reviewText == "") {
 		alert("You forgot something. Please fill out the form completely.");
 	} else {
 		// If stuff's in the form, get the stuff, send to Parse.
@@ -30,6 +30,7 @@ $("#submitReview").on("click", function() {
 		// will work, and this has nothing to do with the contents of the form.
 		// The error code is "XMLHttpRequest failed: {}," and it can't be found on Parse's error
 		// code page at https://parse.com/docs/js/guide#errors.
+		// It looks like a few people on Parse have had this issue too.
 		aReview.save(null, {
 			success: function(aReview) {
 		    	alert("Thank you for your review!");
