@@ -2,7 +2,7 @@
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 $("#ratyReview").raty();
 var Review = Parse.Object.extend("Review");
-// getData();
+getData();
 
 // Triggered on form submission.
 $("#submitReview").on("click", function() {
@@ -25,12 +25,17 @@ $("#submitReview").on("click", function() {
 		aReview.set("reviewText", reviewText);
 		aReview.set("upvotes", 0);
 		aReview.set("downvotes", 0);
+		// I think there's a serious bug between Firefox and Parse here. Some nineteen out of
+		// twenty times Parse will return an error message on Firefox; every once in awhile it
+		// will work, and this has nothing to do with the contents of the form.
+		// The error code is "XMLHttpRequest failed: {}," and it can't be found on Parse's error
+		// code page at https://parse.com/docs/js/guide#errors.
 		aReview.save(null, {
 			success: function(aReview) {
-		    	alert("New object created with objectId: " + aReview.id);
+		    	alert("Thank you for your review!");
 		  	},
 	  		error: function(aReview, error) {
-	    		alert('Failed to create new object, with error code: ' + error.message);
+	    		alert("ERROR: " + error.message);
 	  		}
 		});
 	}
@@ -38,7 +43,8 @@ $("#submitReview").on("click", function() {
 
 // Queries parse for review data.
 var getData = function() {
-	alert("getData");
+	alert("getData called. No data to get yet.");
+	/*
     var query = new Parse.Query(Review);
 	// Set a parameter for your query -- where the website property isn't missing
 	query.notEqualTo("reviewerName", "");
@@ -52,7 +58,7 @@ var getData = function() {
             insertReviews(results);
         }
     })
-
+	*/
 }
 
 // Empties out the reviews <div>, loops through my parse data and sends each piece of data
