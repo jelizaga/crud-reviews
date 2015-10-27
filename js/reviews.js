@@ -28,6 +28,7 @@ $("#submitReview").on("click", function() {
 	testReview.set("reviewTitle", "B");
 	testReview.set("reviewStars", "C");
 	testReview.set("reviewText", "D");
+	testReview.save();
 
 	/*
 	var testReview = new Review();
