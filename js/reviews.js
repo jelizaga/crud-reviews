@@ -23,27 +23,19 @@ $("#submitReview").on("click", function() {
 	var reviewText = $("#reviewText").val();
 	alert("This should be sent to Parse: " + reviewerName + " " + reviewTitle + " " + reviewStars + " " + reviewText);
 
+	var testReview = new Review();
+	testReview.set("reviewerName", "A");
+	testReview.set("reviewTitle", "B");
+	testReview.set("reviewStars", "C");
+	testReview.set("reviewText", "D");
+
 	/*
 	var testReview = new Review();
-	testReview.save({
-		reviewerName: "X",
-		reviewTitle: "X",
-		reviewStars: "X",
-		reviewText: "X",
-		upvotes: 0,
-		downvotes: 0
-	});
+	testReview.set("reviewerName", reviewerName.val;
+	testReview.set("reviewTitle", reviewTitle.val());
+	testReview.set("reviewStars", reviewStars.val());
+	testReview.set("reviewText", reviewText.val());
 	*/
-
-	var aReview = new Review();
-	aReview.save({
-		reviewerName: reviewerName.val();,
-		reviewTitle: reviewTitle.val();,
-		reviewStars: parseInt(reviewStars);,
-		reviewText: reviewText.val();,
-		upvotes: 0,
-		downvotes: 0
-	});
 
 
 
