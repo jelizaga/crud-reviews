@@ -2,15 +2,6 @@
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 $("#ratyReview").raty();
 var Review = Parse.Object.extend("Review");
-/*
-var newReview = new Review();
-newReview.save({
-	reviewerName: "W",
-	reviewTitle: "X",
-	reviewStars: "Y",
-	reviewText: "Zs"
-});
-*/
 // getData();
 
 // Triggered on form submission.
@@ -23,20 +14,25 @@ $("#submitReview").on("click", function() {
 	var reviewText = $("#reviewText").val();
 	alert("This should be sent to Parse: " + reviewerName + " " + reviewTitle + " " + reviewStars + " " + reviewText);
 
-	var testReview = new Review();
-	testReview.set("reviewerName", "A");
-	testReview.set("reviewTitle", "B");
-	testReview.set("reviewStars", "C");
-	testReview.set("reviewText", "D");
-	testReview.save();
+	var aReview = new Review();
+	aReview.set("reviewerName", "TEST NAME");
+	aReview.set("reviewTitle", "TEST TITLE");
+	aReview.set("reviewStars", "TEST STARS");
+	aReview.set("reviewText", "TEST TEXT");
+	aReview.set("upvotes", 0);
+	aReview.set("downvotes", 0);
 
 	/*
-	var testReview = new Review();
-	testReview.set("reviewerName", reviewerName.val;
-	testReview.set("reviewTitle", reviewTitle.val());
-	testReview.set("reviewStars", reviewStars.val());
-	testReview.set("reviewText", reviewText.val());
-	*/
+	var aReview = new Review();
+	aReview.save({
+		reviewerName: "A",
+		reviewTitle: "B",
+		reviewStars: "C",
+		reviewText: "D",
+		upvotes: 0,
+		downvotes: 0
+	});
+*/
 
 
 
