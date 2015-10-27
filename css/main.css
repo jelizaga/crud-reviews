@@ -31,7 +31,7 @@ form {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding: 20px;
-	width: 900px;
+	width: 400px;
 }
 
 .italic {
@@ -42,11 +42,11 @@ form {
 /* Styling the title. */
 #title {
 	/* Source: Aaron Burden. https://unsplash.com/aaronburden. */
-	background-image: url("../pics/titlebg.png");
+	background-image: url("../pics/titlebgtiny.png");
 	margin-left: auto;
 	margin-right: auto;
-	height: 643px;
-	width: 900px;
+	height: 286px;
+	width: 400px;
 }
 
 #title h1 {
@@ -72,3 +72,16 @@ form {
 	text-align: center;
 }
 
+@media screen and (min-width: 992px) {
+	
+	.islandDiv {
+		width: 900px;
+	}
+
+	#title {
+		background-image: url("../img/background-md.jpg");
+		height: 643px;
+		width: 900px;
+	}
+
+}

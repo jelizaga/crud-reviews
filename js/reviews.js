@@ -13,23 +13,22 @@ $("#submitReview").on("click", function() {
 	var reviewText = $("#reviewText").val();
 	
 	// Authenticate that there's stuff in the form.
-	if (reviewerName == "" || reviewTitle == "" || reviewStars == 0 || reviewText == "") {
+	if (reviewerName === "" || reviewTitle === "" || reviewStars === 0 || reviewText === "") {
 		alert("You forgot something. Please fill out the form completely.");
 	} else {
 		// If stuff's in the form, get the stuff, send to Parse.
 		var aReview = new Review();
 		aReview.set("reviewerName", reviewerName);
 		aReview.set("reviewTitle", reviewTitle);
-		aReview.set("reviewStars", "TEST STARS");
+		aReview.set("reviewStars", parseInt(reviewStars));
 		aReview.set("reviewText", reviewText);
 		aReview.set("upvotes", 0);
 		aReview.set("downvotes", 0);
-		// I think there's a serious bug between Firefox and Parse here. Some nineteen out of
-		// twenty times Parse will return an error message on Firefox; every once in awhile it
-		// will work, and this has nothing to do with the contents of the form.
+		// I think there's a serious bug here. Some nineteen out of twenty times Parse will return
+		// an error message; every once in awhile it will work, and this has nothing to do with the
+		// contents of the form.
 		// The error code is "XMLHttpRequest failed: {}," and it can't be found on Parse's error
 		// code page at https://parse.com/docs/js/guide#errors.
-		// It looks like a few people on Parse have had this issue too.
 		aReview.save(null, {
 			success: function(aReview) {
 		    	alert("Thank you for your review!");
@@ -39,14 +38,13 @@ $("#submitReview").on("click", function() {
 	  		}
 		});
 	}
+	return false;
 });
 
 // Queries parse for review data.
 var getData = function() {
-	alert("getData called. No data to get yet.");
-	/*
+	alert("getData called.");
     var query = new Parse.Query(Review);
-	// Set a parameter for your query -- where the website property isn't missing
 	query.notEqualTo("reviewerName", "");
 	query.notEqualTo("reviewTitle", "");
 	query.notEqualTo("reviewStars", 0);
@@ -57,9 +55,8 @@ var getData = function() {
         success:function(results) {
             insertReviews(results);
         }
-    })
-	*/
-}
+    });
+};
 
 // Empties out the reviews <div>, loops through my parse data and sends each piece of data
 // to addReview.
@@ -69,7 +66,7 @@ var insertReviews = function(data) {
     for (i in data) {
         addReview(data[i]);
     }
-}
+};
 
 var addReview = function(rev) {
 	// Acquiring the review's parameters.
@@ -79,8 +76,8 @@ var addReview = function(rev) {
 	var reviewText = rev.get("reviewText");
 
 	// Constructing review.
-	var oneReview = ("<div class='islandDiv'><p>" + reviewTitle + " by " + reviewName + "</p><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
+	var oneReview = ("<div class='islandDiv'><p>" + reviewTitle + " by " + reviewerName + "</p><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
 
 	// Inserting review.
 	$("#reviewIntro").after(oneReview);
-}
+};
