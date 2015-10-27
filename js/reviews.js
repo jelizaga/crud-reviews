@@ -25,10 +25,12 @@ $("#submitReview").on("click", function() {
 
 	var newReview = new Review();
 	newReview.save({
-		"reviewerName": "?",
-		"reviewTitle": "?",
-		"reviewStars": "?",
-		"reviewText": "?",
+		reviewerName: "X",
+		reviewTitle: "X",
+		reviewStars: "X",
+		reviewText: "X",
+		upvotes: 0,
+		downvotes: 0
 	});
 
 
