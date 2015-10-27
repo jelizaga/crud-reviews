@@ -12,7 +12,6 @@ $("#submitReview").on("click", function() {
 	var reviewTitle = $("#reviewTitle").val();
 	var reviewStars = $("#ratyReview").raty("score");
 	var reviewText = $("#reviewText").val();
-	alert("This should be sent to Parse: " + reviewerName + " " + reviewTitle + " " + reviewStars + " " + reviewText);
 
 	var aReview = new Review();
 	aReview.set("reviewerName", "TEST NAME");
