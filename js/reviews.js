@@ -24,8 +24,8 @@ $("#submitReview").on("click", function() {
 	alert("This should be sent to Parse: " + reviewerName + " " + reviewTitle + " " + reviewStars + " " + reviewText);
 
 	/*
-	var newReview = new Review();
-	newReview.save({
+	var testReview = new Review();
+	testReview.save({
 		reviewerName: "X",
 		reviewTitle: "X",
 		reviewStars: "X",
@@ -35,12 +35,12 @@ $("#submitReview").on("click", function() {
 	});
 	*/
 
-	var anotherReview = new Review();
-	anotherReview.save({
-		reviewerName: "Y",
-		reviewTitle: "Y",
-		reviewStars: "Y",
-		reviewText: "Y",
+	var aReview = new Review();
+	aReview.save({
+		reviewerName: reviewerName.val();,
+		reviewTitle: reviewTitle.val();,
+		reviewStars: parseInt(reviewStars);,
+		reviewText: reviewText.val();,
 		upvotes: 0,
 		downvotes: 0
 	});
