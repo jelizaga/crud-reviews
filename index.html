@@ -8,9 +8,8 @@
 			Duck Reviews: The University of Washington
 		</title>
 
-		<!-- Importing stylesheet and js for loading and acquiring reviews.. -->
+		<!-- Importing primary stylesheet. -->
 		<link href="css/main.css" rel="stylesheet" />
-		<script type="text/javascript" src="js/reviews.js"></script>
 
 		<!-- Importing bootstrap.css, jQuery.js, parse.js, font-awesome.css, and raty.js. -->
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -40,7 +39,7 @@
 			<h2>
 				University of Washington
 			</h2>
-			<img src="pics/uw.png" id="unipic" />
+			<img src="pics/uw.png" id="unipic" alt="University of Washington" />
 			<p>
 				The University of Washington is a university located in the state of Washington.
 				The humans congregate here to drink brown water and discuss things. There's a large
@@ -77,8 +76,11 @@
 		</div>
 
 		<!-- Empty div for containing reviews. -->
-		<div id="reviews">
+		<div id="reviewList">
 		</div>
+
+		<!-- Establishing script for getting reviews. -->
+		<script type="text/javascript" src="js/reviews.js"></script>
 
 	</body>
 

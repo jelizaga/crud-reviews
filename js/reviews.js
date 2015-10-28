@@ -2,6 +2,7 @@
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 $("#ratyReview").raty();
 var Review = Parse.Object.extend("Review");
+getReviews();
 
 // Triggered on form submission.
 $("#submitReview").on("click", function() {
@@ -43,14 +44,12 @@ $("#submitReview").on("click", function() {
 var getReviews = function() {
 	alert("getReviews called.");
 	$("#reviews").empty();
-	/*
 	var query = new Parse.Query(Review);
 	query.find({
 		success:function(results) {
 			insertReviews(results);
 		}
 	});
-*/
 };
 
 // Empties out the reviews <div>, loops through my Parse data and sends each piece of data
@@ -74,5 +73,5 @@ var addReview = function(rev) {
 	// Constructing review.
 	var oneReview = ("<div class='islandDiv'><p>" + reviewTitle + " by " + reviewerName + "</p><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
 	// Inserting review.
-	$("#reviews").append(oneReview);
+	$("#reviewList").append(oneReview);
 };
