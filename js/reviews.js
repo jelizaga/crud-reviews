@@ -2,6 +2,7 @@
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 $("#ratyReview").raty();
 var Review = Parse.Object.extend("Review");
+getReviews();
 
 // Triggered on form submission.
 $("#submitReview").on("click", function() {
@@ -25,41 +26,41 @@ $("#submitReview").on("click", function() {
 		aReview.set("upvotes", 0);
 		aReview.set("downvotes", 0);
 		aReview.save(null, {
-			// Save is successful: thanks the user for the review, updates review data.
+			// Save is successful: thanks the user for the review, updates reviews.
 			success: function(aReview) {
-		    	alert("Thank you for your review!");
-		    	getData();
-		  	},
-		  	// Save failed: error code displayed.
-	  		error: function(aReview, error) {
-	    		alert("ERROR: " + error.message);
-	  		}
+				alert("Thank you for your review!");
+				getReviews();
+			},
+			// Save failed: error code displayed.
+			error: function(aReview, error) {
+				alert("ERROR: " + error.message);
+			}
 		});
 	}
 	return false;
 });
 
-// Queries parse for review data.
-var getData = function() {
-	alert("getData called.");
-    var query = new Parse.Query(Review);
-    query.find({
-        success:function(results) {
-            insertReviews(results);
-        }
-    });
+// Queries parse for the reviews.
+var getReviews = function() {
+	alert("getReviews called.");
+	$("#reviews").empty();
+	var query = new Parse.Query(Review);
+	query.find({
+		success:function(results) {
+			insertReviews(results);
+		}
+	});
 };
 
 // Empties out the reviews <div>, loops through my Parse data and sends each piece of data
 // to addReview.
 var insertReviews = function(data) {
-	alert("insertReviews");
-	$("#reviews").empty();
-    for (i in data) {
+    for (var i in data) {
         addReview(data[i]);
     }
 };
 
+// Adds a review to the "reviews" div.
 var addReview = function(rev) {
 	// Acquiring the review's parameters.
 	var reviewerName = rev.get("reviewerName");
@@ -71,7 +72,6 @@ var addReview = function(rev) {
 
 	// Constructing review.
 	var oneReview = ("<div class='islandDiv'><p>" + reviewTitle + " by " + reviewerName + "</p><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
-
 	// Inserting review.
 	$("#reviews").append(oneReview);
 };
