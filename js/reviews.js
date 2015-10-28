@@ -77,6 +77,7 @@ var addReview = function(rev) {
 	var reviewTitle = rev.get("reviewTitle");
 	var reviewStars = rev.get("reviewStars");
 	var reviewText = rev.get("reviewText");
+	var ratyGraphic = $("div").raty({ readOnly: true, score: reviewStars });
 
 	// Updating aggregate data.
 	totalReviews++;
@@ -86,7 +87,7 @@ var addReview = function(rev) {
 	// alert("[REVIEWER NAME:] " + reviewerName + " [REVIEW TITLE:] " + reviewTitle + " [REVIEW SCORE:] " + reviewStars + " [REVIEW TEXT:] " + reviewText);
 
 	// Constructing review.
-	var oneReview = $("<div class='islandDiv'><text class='bold'>" + reviewTitle + "</text><text>a review by <span class='italic'>" + reviewerName + "</span></text><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
+	var oneReview = $("<div class='islandDiv'>" + ratyGraphic + "<text class='bold'>" + reviewTitle + "</text><text>a review by <span class='italic'>" + reviewerName + "</span></text><p>" + "</p><p>" + reviewText + "</p></div>");
 	
 	// Inserting review.
 	$("#reviewList").append(oneReview);
