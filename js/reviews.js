@@ -66,7 +66,7 @@ var insertReviews = function(data) {
     for (i in data) {
         addReview(data[i]);
     }
-    
+
 };
 
 // Adds a review to the "reviews" div.
@@ -83,12 +83,14 @@ var addReview = function(rev) {
 	totalStars = totalStars + reviewStars;
 
 	// Debugging alert.
-	alert("[REVIEWER NAME:] " + reviewerName + " [REVIEW TITLE:] " + reviewTitle + " [REVIEW SCORE:] " + reviewStars + " [REVIEW TEXT:] " + reviewText);
+	// alert("[REVIEWER NAME:] " + reviewerName + " [REVIEW TITLE:] " + reviewTitle + " [REVIEW SCORE:] " + reviewStars + " [REVIEW TEXT:] " + reviewText);
 
 	// Constructing review.
-	var oneReview = $("<div class='islandDiv'><p>" + reviewTitle + " by " + reviewerName + "</p><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
+	var oneReview = $("<div class='islandDiv'><h2>" + reviewTitle + "<h2><p>a review by <span class='italic'>" + reviewerName + "</span></p><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
 	
 	// Inserting review.
 	$("#reviewList").append(oneReview);
 
 };
+
+getData();
