@@ -40,6 +40,10 @@ p, text, #ratyReview, #reviewIntro {
 	font-weight: bold;
 }
 
+#ratyDiv {
+	color: #C6774C;
+}
+
 /* Styling the title. */
 #title {
 	/* Source: Aaron Burden. https://unsplash.com/aaronburden. */
@@ -63,6 +67,7 @@ p, text, #ratyReview, #reviewIntro {
 /* Location info. */
 #ratyAverage {
 	color: #A78B8A;
+	display: inline;
 }
 
 #unipic {
