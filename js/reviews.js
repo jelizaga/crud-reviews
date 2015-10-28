@@ -43,18 +43,20 @@ $("#submitReview").on("click", function() {
 var getReviews = function() {
 	alert("getReviews called.");
 	$("#reviews").empty();
+	/*
 	var query = new Parse.Query(Review);
 	query.find({
 		success:function(results) {
 			insertReviews(results);
 		}
 	});
+*/
 };
 
 // Empties out the reviews <div>, loops through my Parse data and sends each piece of data
 // to addReview.
 var insertReviews = function(data) {
-    for (var i in data) {
+    for (i in data) {
         addReview(data[i]);
     }
 };
