@@ -11,10 +11,10 @@ body {
 }
 
 p {
-	text-indent: 3em;
+	text-indent: 2em;
 }
 
-p, #ratyReview, #reviewIntro {
+p, text, #ratyReview, #reviewIntro {
 	color: #C6774C;
 }
 
