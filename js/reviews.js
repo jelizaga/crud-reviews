@@ -2,6 +2,10 @@
 Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
 $("#ratyReview").raty();
 var Review = Parse.Object.extend("Review");
+// Aggregate data.
+var totalReviews = 0;
+var totalStars = 0;
+var averageScore = 0;
 
 // Triggered on form submission.
 $("#submitReview").on("click", function() {
@@ -37,40 +41,54 @@ $("#submitReview").on("click", function() {
 		});
 	}
 	return false;
+
 });
 
 // Queries parse for the reviews.
 var getReviews = function() {
-	alert("getReviews called.");
+
 	$("#reviews").empty();
+
 	var query = new Parse.Query(Review);
 	query.find({
 		success:function(results) {
 			insertReviews(results);
 		}
 	});
+
 };
 
 // Empties out the reviews <div>, loops through my Parse data and sends each piece of data
 // to addReview.
 var insertReviews = function(data) {
+
+	$("#reviewList").empty();
     for (i in data) {
         addReview(data[i]);
     }
+    
 };
 
 // Adds a review to the "reviews" div.
 var addReview = function(rev) {
+
 	// Acquiring the review's parameters.
 	var reviewerName = rev.get("reviewerName");
 	var reviewTitle = rev.get("reviewTitle");
 	var reviewStars = rev.get("reviewStars");
 	var reviewText = rev.get("reviewText");
 
-	alert("REVIEWER NAME: " + reviewerName + ", REVIEW TITLE: " + reviewTitle + ", REVIEW SCORE: " + reviewStars + ", REVIEW TEXT: " + reviewText);
+	// Updating aggregate data.
+	totalReviews++;
+	totalStars = totalStars + reviewStars;
+
+	// Debugging alert.
+	alert("[REVIEWER NAME:] " + reviewerName + " [REVIEW TITLE:] " + reviewTitle + " [REVIEW SCORE:] " + reviewStars + " [REVIEW TEXT:] " + reviewText);
 
 	// Constructing review.
-	var oneReview = ("<div class='islandDiv'><p>" + reviewTitle + " by " + reviewerName + "</p><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
+	var oneReview = $("<div class='islandDiv'><p>" + reviewTitle + " by " + reviewerName + "</p><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
+	
 	// Inserting review.
 	$("#reviewList").append(oneReview);
+
 };
