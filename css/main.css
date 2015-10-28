@@ -25,11 +25,11 @@ form {
 .islandDiv {
 	background-color: #111B24;
 	box-shadow: 1px 1px 5px #000000;
-	clear: both;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	overflow: hidden;
 	padding: 20px;
 	width: 400px;
 }
