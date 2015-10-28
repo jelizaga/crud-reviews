@@ -1,6 +1,6 @@
 # crud-reviews
 CRUD application for INFO 343.
-
+http://students.washington.edu/jelizaga/info343/crud-reviews/
 
 ##### Did you receive help from any other sources (classmates, etc.)? If so, please list who. #####
 > None.
@@ -11,5 +11,5 @@ CRUD application for INFO 343.
 ##### Did you encounter any problems in this challenge we should warn students about in the future? How can we make the challenge better? #####
 > I spent around 3 days hunting down a bug with Parse, only to realize it was because I was sending
 integers to a column that was designated for strings. The error code couldn't be found in their JS
-error code list. For some reason getReviews() won't call on the js file or html. I had raty
-working, but that appears to have dropped in a recent commit.
+error code list. For some reason getReviews() won't call on the js file or html; or, the alert inside
+getReviews won't execute, and upon calling getReviews, js breaks and won't send reviews to Parse.
