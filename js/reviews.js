@@ -83,7 +83,7 @@ var addReview = function(rev) {
 
 	// Creating review's raty div.
 	var ratyDiv = $("<div id='ratyDiv'></div>");
-	var ratyFull = ratyDiv.raty({
+	$("#ratyDiv").raty({
 		readOnly: true,
 		score: reviewStars
 	});
@@ -101,7 +101,7 @@ var addReview = function(rev) {
 	// alert("[REVIEWER NAME:] " + reviewerName + " [REVIEW TITLE:] " + reviewTitle + " [REVIEW SCORE:] " + reviewStars + " [REVIEW TEXT:] " + reviewText);
 
 	// Constructing review.
-	var oneReview = $("<div class='islandDiv'>" + ratyFull + "<text class='bold'>" + reviewTitle + "</text><p>" + "</p><p>" + reviewText + "</p><p class='italic'>- " + reviewerName + "</p></div>");
+	var oneReview = $("<div class='islandDiv'>" + ratyDiv + "<text class='bold'>" + reviewTitle + "</text><p>" + "</p><p>" + reviewText + "</p><p class='italic'>- " + reviewerName + "</p></div>");
 	
 	// Inserting review.
 	$("#reviewList").append(oneReview);
