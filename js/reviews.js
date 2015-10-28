@@ -1,15 +1,11 @@
 // Initializing Parse and the review raty.
-$(document).ready(function() {
-	
-	Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
-	$("#ratyReview").raty();
-	var Review = Parse.Object.extend("Review");
-	// Aggregate data.
-	var totalReviews = 0;
-	var totalStars = 0;
-	var averageScore = 0;
-
-})
+Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
+$("#ratyReview").raty();
+var Review = Parse.Object.extend("Review");
+// Aggregate data.
+var totalReviews = 0;
+var totalStars = 0;
+var averageScore = 0;
 
 // Triggered on form submission.
 $("#submitReview").on("click", function() {
