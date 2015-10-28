@@ -61,6 +61,10 @@ p, text, #ratyReview, #reviewIntro {
 }
 
 /* Location info. */
+#ratyAverage {
+	color: #A78B8A;
+}
+
 #unipic {
 	float: left;
 	margin: 1em;
