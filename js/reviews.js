@@ -32,6 +32,10 @@ $("#submitReview").on("click", function() {
 			// Save is successful: thanks the user for the review, updates reviews.
 			success: function(aReview) {
 				alert("Thank you for your review!");
+				$("#reviewerName").val() = "";
+				$("#reviewTitle").val() = "";
+				$("#ratyReview").raty("score") = 0;
+				$("#reviewText").val() = "";
 				getReviews();
 			},
 			// Save failed: error code displayed.
