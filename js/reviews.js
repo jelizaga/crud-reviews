@@ -101,7 +101,7 @@ var addReview = function(rev) {
 	// alert("[REVIEWER NAME:] " + reviewerName + " [REVIEW TITLE:] " + reviewTitle + " [REVIEW SCORE:] " + reviewStars + " [REVIEW TEXT:] " + reviewText);
 
 	// Constructing review.
-	var oneReview = $(ratyFull + "<div class='islandDiv'>" + "<text class='bold'>" + reviewTitle + "</text><p>" + "</p><p>" + reviewText + "</p><p class='italic'>- " + reviewerName + "</p></div>");
+	var oneReview = $("<div class='islandDiv'>" + "<text class='bold'>" + reviewTitle + "</text><p>" + "</p><p>" + reviewText + "</p><p class='italic'>- " + reviewerName + "</p></div>");
 	
 	// Inserting review.
 	$("#reviewList").append(oneReview);
