@@ -1,11 +1,15 @@
 // Initializing Parse and the review raty.
-Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
-$("#ratyReview").raty();
-var Review = Parse.Object.extend("Review");
-// Aggregate data.
-var totalReviews = 0;
-var totalStars = 0;
-var averageScore = 0;
+$(document).ready(function() {
+	
+	Parse.initialize("hnkJHK9wfuwpvFvE3rkakJRXoF1JpLyNveOV5g64", "qVGWixyvuf5EKo4RKMkkAybzbDGAEbAbiCW3fEJZ");
+	$("#ratyReview").raty();
+	var Review = Parse.Object.extend("Review");
+	// Aggregate data.
+	var totalReviews = 0;
+	var totalStars = 0;
+	var averageScore = 0;
+
+})
 
 // Triggered on form submission.
 $("#submitReview").on("click", function() {
@@ -86,11 +90,9 @@ var addReview = function(rev) {
 	// alert("[REVIEWER NAME:] " + reviewerName + " [REVIEW TITLE:] " + reviewTitle + " [REVIEW SCORE:] " + reviewStars + " [REVIEW TEXT:] " + reviewText);
 
 	// Constructing review.
-	var oneReview = $("<div class='islandDiv'><h2>" + reviewTitle + "<h2><p>a review by <span class='italic'>" + reviewerName + "</span></p><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
+	var oneReview = $("<div class='islandDiv'><p class='bold'>" + reviewTitle + "</p><p>a review by <span class='italic'>" + reviewerName + "</span></p><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
 	
 	// Inserting review.
 	$("#reviewList").append(oneReview);
 
 };
-
-getData();

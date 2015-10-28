@@ -7,10 +7,10 @@ body {
 	background-color: #000000;
 	background-image: url("../pics/bgtile.png");
 	color: #C6774C;
-	font-weight: 400;
+	font-family: sans-serif;
 }
 
-p, h2, em, #ratyReview, #reviewIntro {
+p, #ratyReview, #reviewIntro {
 	color: #C6774C;
 }
 
@@ -36,6 +36,11 @@ form {
 .italic {
 	color: #C6774C;
 	font-style: italic;
+}
+
+.bold {
+	color: #A78B8A;
+	font-weight: bold;
 }
 
 /* Styling the title. */
