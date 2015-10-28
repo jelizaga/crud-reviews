@@ -24,16 +24,13 @@ $("#submitReview").on("click", function() {
 		aReview.set("reviewText", reviewText);
 		aReview.set("upvotes", 0);
 		aReview.set("downvotes", 0);
-		// I think there's a serious bug here. Some nineteen out of twenty times Parse will return
-		// an error message; every once in awhile it will work, and this has nothing to do with the
-		// contents of the form.
-		// The error code is "XMLHttpRequest failed: {}," and it can't be found on Parse's error
-		// code page at https://parse.com/docs/js/guide#errors.
 		aReview.save(null, {
+			// Save is successful: thanks the user for the review, updates review data.
 			success: function(aReview) {
 		    	alert("Thank you for your review!");
 		    	getData();
 		  	},
+		  	// Save failed: error code displayed.
 	  		error: function(aReview, error) {
 	    		alert("ERROR: " + error.message);
 	  		}
@@ -45,11 +42,12 @@ $("#submitReview").on("click", function() {
 // Queries parse for review data.
 var getData = function() {
 	alert("getData called.");
+	/*
     var query = new Parse.Query(Review);
 	query.notEqualTo("reviewerName", "");
 	query.notEqualTo("reviewTitle", "");
 	query.notEqualTo("reviewStars", 0);
-    query.notEqualTo("reviewerText", "");
+    query.notEqualTo("reviewText", "");
 	// Executes the query above (var query); if it's successful the returned results are sent
 	// to insertReviews to be inserted onto the page.
     query.find({
@@ -57,6 +55,7 @@ var getData = function() {
             insertReviews(results);
         }
     });
+	*/
 };
 
 // Empties out the reviews <div>, loops through my parse data and sends each piece of data
@@ -80,5 +79,5 @@ var addReview = function(rev) {
 	var oneReview = ("<div class='islandDiv'><p>" + reviewTitle + " by " + reviewerName + "</p><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
 
 	// Inserting review.
-	$("#reviewIntro").after(oneReview);
+	$("#reviews").append(oneReview);
 };
