@@ -65,7 +65,7 @@ form {
 
 /* Location info. */
 #unipic {
-	display: block;
+	float: left;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 20px;
