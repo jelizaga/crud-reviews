@@ -42,27 +42,19 @@ $("#submitReview").on("click", function() {
 // Queries parse for review data.
 var getData = function() {
 	alert("getData called.");
-	/*
     var query = new Parse.Query(Review);
-	query.notEqualTo("reviewerName", "");
-	query.notEqualTo("reviewTitle", "");
-	query.notEqualTo("reviewStars", 0);
-    query.notEqualTo("reviewText", "");
-	// Executes the query above (var query); if it's successful the returned results are sent
-	// to insertReviews to be inserted onto the page.
     query.find({
         success:function(results) {
             insertReviews(results);
         }
     });
-	*/
 };
 
-// Empties out the reviews <div>, loops through my parse data and sends each piece of data
+// Empties out the reviews <div>, loops through my Parse data and sends each piece of data
 // to addReview.
 var insertReviews = function(data) {
 	alert("insertReviews");
-	// $("#reviews").empty();
+	$("#reviews").empty();
     for (i in data) {
         addReview(data[i]);
     }
@@ -74,6 +66,8 @@ var addReview = function(rev) {
 	var reviewTitle = rev.get("reviewTitle");
 	var reviewStars = rev.get("reviewStars");
 	var reviewText = rev.get("reviewText");
+
+	alert(reviewerName + " " + reviewTitle + " " + reviewStars + " " + reviewText);
 
 	// Constructing review.
 	var oneReview = ("<div class='islandDiv'><p>" + reviewTitle + " by " + reviewerName + "</p><p>" + reviewStars + "</p><p>" + reviewText + "</p></div>");
