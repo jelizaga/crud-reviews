@@ -10,16 +10,12 @@ body {
 	font-family: sans-serif;
 }
 
-p, #ratyReview, #reviewIntro {
-	color: #C6774C;
+p {
+	text-indent: 10px;
 }
 
-form {
-	border-color: #C6774C;
-	border-style: solid;
-	border-width: 2px;
-	margin: 10px;
-	padding: 10px;
+p, #ratyReview, #reviewIntro {
+	color: #C6774C;
 }
 
 .islandDiv {
@@ -70,6 +66,16 @@ form {
 	margin: 1em;
 }
 
+/* Form. */
+form {
+	border-color: #C6774C;
+	border-style: solid;
+	border-width: 2px;
+	margin: 10px;
+	padding: 10px;
+}
+
+/* Larger screens. */
 @media screen and (min-width: 992px) {
 	
 	.islandDiv {
