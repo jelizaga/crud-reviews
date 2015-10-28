@@ -29,13 +29,12 @@ $("#submitReview").on("click", function() {
 		aReview.set("upvotes", 0);
 		aReview.set("downvotes", 0);
 		aReview.save(null, {
-			// Save is successful: thanks the user for the review, updates reviews.
+			// Save is successful: thanks the user for the review, updates reviews, clears form.
 			success: function(aReview) {
 				alert("Thank you for your review!");
-				$("#reviewerName").val() = "";
-				$("#reviewTitle").val() = "";
-				$("#ratyReview").raty("score") = 0;
-				$("#reviewText").val() = "";
+				$("#reviewerName").empty();
+				$("#reviewTitle").empty();
+				$("#reviewText").empty();
 				getReviews();
 			},
 			// Save failed: error code displayed.
@@ -82,6 +81,13 @@ var addReview = function(rev) {
 	var reviewStars = rev.get("reviewStars");
 	var reviewText = rev.get("reviewText");
 
+	// Creating review's raty div.
+	var ratyDiv = $("<div id='ratyDiv'></div>");
+	var ratyFull = ratyDiv.raty({
+		readOnly: true,
+		score: reviewStars
+	});
+
 	// Updating aggregate data.
 	totalReviews++;
 	totalStars = totalStars + reviewStars;
@@ -95,7 +101,7 @@ var addReview = function(rev) {
 	// alert("[REVIEWER NAME:] " + reviewerName + " [REVIEW TITLE:] " + reviewTitle + " [REVIEW SCORE:] " + reviewStars + " [REVIEW TEXT:] " + reviewText);
 
 	// Constructing review.
-	var oneReview = $("<div class='islandDiv'>" + "<text class='bold'>" + reviewTitle + "</text><p>" + "</p><p>" + reviewText + "</p><p class='italic'>- " + reviewerName + "</p></div>");
+	var oneReview = $(ratyFull + "<div class='islandDiv'>" + "<text class='bold'>" + reviewTitle + "</text><p>" + "</p><p>" + reviewText + "</p><p class='italic'>- " + reviewerName + "</p></div>");
 	
 	// Inserting review.
 	$("#reviewList").append(oneReview);
