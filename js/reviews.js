@@ -41,7 +41,6 @@ $("#submitReview").on("click", function() {
 
 // Queries Parse for the reviews.
 var getReviews = function() {
-	$("#reviewList").empty();
 	var query = new Parse.Query(Review);
 	query.find({
 		success:function(results) {
